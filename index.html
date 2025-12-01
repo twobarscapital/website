@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Two Bars Capital - Multinational private family office managing a diversified portfolio across manufacturing, energy, logistics, food and beverage, agriculture, and real estate.">
+    <title>Two Bars Capital</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a0a08;
+            --secondary: #2d1410;
+            --accent: #8B1A10;
+            --accent-light: #a52a1a;
+            --text: #f5f5f5;
+            --text-muted: #c0b0a0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 10, 8, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(139, 26, 16, 0.2);
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B1A10' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero .tagline {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: var(--accent);
+            margin: 2rem auto;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Sectors Section */
+        .sectors {
+            padding: 8rem 5%;
+            background: var(--secondary);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sector-card {
+            background: rgba(26, 26, 46, 0.5);
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(139, 26, 16, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .sector-card:hover {
+            border-color: rgba(139, 26, 16, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .sector-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .sector-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
+        }
+
+        .sector-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 5%;
+            background: var(--primary);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 5%;
+            background: var(--secondary);
+            text-align: center;
+        }
+
+        .contact-email {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-email:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 5%;
+            background: var(--primary);
+            text-align: center;
+            border-top: 1px solid rgba(139, 26, 16, 0.2);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .sectors {
+                padding: 5rem 5%;
+            }
+
+            .about {
+                padding: 5rem 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home"><img src="logo.png" alt="Two Bars Capital" class="nav-logo"></a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sectors">Sectors</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="logo.png" alt="Two Bars Capital" style="width: 120px; height: auto; margin-bottom: 2rem;">
+            <h1>TWO BARS <span>CAPITAL</span></h1>
+            <p class="tagline">Private Family Office</p>
+            <div class="divider"></div>
+            <p>A multinational private family office managing a diversified portfolio across key industries, building lasting value through strategic investments and long-term partnerships.</p>
+        </div>
+    </section>
+
+    <section class="sectors" id="sectors">
+        <h2 class="section-title">Investment Sectors</h2>
+        <p class="section-subtitle">Diversified holdings across essential industries</p>
+        <div class="sectors-grid">
+            <div class="sector-card">
+                <div class="sector-icon">&#9881;</div>
+                <h3>Manufacturing</h3>
+                <p>Strategic investments in industrial manufacturing, driving innovation and operational excellence across global markets.</p>
+            </div>
+            <div class="sector-card">
+                <div class="sector-icon">&#9889;</div>
+                <h3>Energy</h3>
+                <p>Portfolio holdings in traditional and renewable energy sectors, supporting the global transition to sustainable power.</p>
+            </div>
+            <div class="sector-card">
+                <div class="sector-icon">&#9992;</div>
+                <h3>Logistics</h3>
+                <p>Investments in supply chain infrastructure and transportation networks connecting markets worldwide.</p>
+            </div>
+            <div class="sector-card">
+                <div class="sector-icon">&#127863;</div>
+                <h3>Food & Beverage</h3>
+                <p>Holdings in premium food and beverage brands, from production to distribution across international markets.</p>
+            </div>
+            <div class="sector-card">
+                <div class="sector-icon">&#127806;</div>
+                <h3>Agriculture</h3>
+                <p>Investments in sustainable agricultural operations and agri-tech innovations for food security.</p>
+            </div>
+            <div class="sector-card">
+                <div class="sector-icon">&#127970;</div>
+                <h3>Real Estate</h3>
+                <p>Strategic real estate holdings including commercial, residential, and industrial properties in prime locations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 class="section-title">About Us</h2>
+            <div class="divider"></div>
+            <p>Two Bars Capital is a multinational private family office dedicated to preserving and growing wealth across generations. Our diversified investment approach spans multiple sectors and geographies, allowing us to capitalize on opportunities while managing risk effectively.</p>
+            <p>We take a long-term view on investments, partnering with exceptional management teams and supporting businesses that create lasting value for stakeholders and communities alike.</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="divider"></div>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">For inquiries and partnership opportunities</p>
+        <a href="mailto:info@twobarscapital.com" class="contact-email">info@twobarscapital.com</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Two Bars Capital. All rights reserved.</p>
+    </footer>
+</body>
+</html>
