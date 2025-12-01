@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -55,18 +55,6 @@
         .nav-logo {
             height: 40px;
             width: auto;
-        }
-
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text);
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            color: var(--accent);
         }
 
         nav ul {
@@ -120,7 +108,6 @@
         }
 
         .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 500;
             margin-bottom: 1.5rem;
@@ -161,8 +148,8 @@
         }
 
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
             font-size: 2.5rem;
+            font-weight: 500;
             text-align: center;
             margin-bottom: 1rem;
             letter-spacing: 2px;
@@ -201,8 +188,8 @@
         }
 
         .sector-card h3 {
-            font-family: 'Cormorant Garamond', serif;
             font-size: 1.4rem;
+            font-weight: 500;
             margin-bottom: 0.75rem;
             color: var(--accent);
         }
@@ -213,49 +200,75 @@
             line-height: 1.7;
         }
 
-        /* About Section */
-        .about {
-            padding: 8rem 5%;
-            background: var(--primary);
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-        }
-
         /* Contact Section */
         .contact {
             padding: 6rem 5%;
-            background: var(--secondary);
+            background: var(--primary);
             text-align: center;
         }
 
-        .contact-email {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            color: var(--accent);
-            text-decoration: none;
-            letter-spacing: 1px;
-            transition: opacity 0.3s ease;
+        .contact-form {
+            max-width: 500px;
+            margin: 2rem auto 0;
         }
 
-        .contact-email:hover {
-            opacity: 0.8;
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--secondary);
+            border: 1px solid rgba(139, 26, 16, 0.3);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--accent);
+            color: var(--text);
+            border: none;
+            padding: 1rem 3rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-light);
         }
 
         /* Footer */
         footer {
             padding: 2rem 5%;
-            background: var(--primary);
+            background: var(--secondary);
             text-align: center;
             border-top: 1px solid rgba(139, 26, 16, 0.2);
         }
@@ -275,7 +288,7 @@
                 padding: 5rem 5%;
             }
 
-            .about {
+            .contact {
                 padding: 5rem 5%;
             }
         }
@@ -287,7 +300,6 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#sectors">Sectors</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -339,20 +351,28 @@
         </div>
     </section>
 
-    <section class="about" id="about">
-        <div class="about-content">
-            <h2 class="section-title">About Us</h2>
-            <div class="divider"></div>
-            <p>Two Bars Capital is a multinational private family office dedicated to preserving and growing wealth across generations. Our diversified investment approach spans multiple sectors and geographies, allowing us to capitalize on opportunities while managing risk effectively.</p>
-            <p>We take a long-term view on investments, partnering with exceptional management teams and supporting businesses that create lasting value for stakeholders and communities alike.</p>
-        </div>
-    </section>
-
     <section class="contact" id="contact">
         <h2 class="section-title">Get in Touch</h2>
         <div class="divider"></div>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">For inquiries and partnership opportunities</p>
-        <a href="mailto:info@twobarscapital.com" class="contact-email">info@twobarscapital.com</a>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">For inquiries and partnership opportunities</p>
+        <form class="contact-form" action="https://formsubmit.co/marc@twobarscapital.com" method="POST">
+            <input type="hidden" name="_subject" value="New Contact from Two Bars Capital Website">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://twobarscapital.com/?submitted=true">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
     </section>
 
     <footer>
