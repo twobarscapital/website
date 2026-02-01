@@ -45,45 +45,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(26, 10, 8, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(139, 26, 16, 0.2);
-        }
-
-        .nav-logo {
-            height: 40px;
-            width: auto;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 400;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -179,7 +140,7 @@
         }
 
         .sector-card {
-            background: rgba(26, 26, 46, 0.5);
+            background: rgba(26, 10, 8, 0.5);
             padding: 2.5rem 2rem;
             border: 1px solid rgba(139, 26, 16, 0.2);
             transition: all 0.3s ease;
@@ -240,10 +201,6 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
             .sectors {
                 padding: 5rem 5%;
             }
@@ -255,14 +212,6 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#home"><img src="logo.png" alt="Two Bars Capital" class="nav-logo"></a>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#sectors">Sectors</a></li>
-        </ul>
-    </nav>
-
     <section class="hero" id="home">
         <div class="hero-content">
             <img src="logo.png" alt="Two Bars Capital" style="width: 120px; height: auto; margin-bottom: 2rem;">
