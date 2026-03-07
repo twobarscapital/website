@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found — Two Bars Capital</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #1a0a08;
+            --secondary: #2d1410;
+            --accent: #8B1A10;
+            --text: #f5f5f5;
+            --text-muted: #c0b0a0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        img { width: 80px; height: auto; margin-bottom: 2rem; }
+        h1 { font-size: 4rem; font-weight: 500; color: var(--accent); margin-bottom: 1rem; }
+        p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem; max-width: 450px; line-height: 1.7; }
+        a {
+            color: var(--text);
+            text-decoration: none;
+            border: 1px solid rgba(139, 26, 16, 0.4);
+            padding: 0.75rem 2rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        a:hover { border-color: var(--accent); background: rgba(139, 26, 16, 0.15); }
+    </style>
+</head>
+<body>
+    <img src="/logo.png" alt="Two Bars Capital">
+    <h1>404</h1>
+    <p>The page you're looking for doesn't exist or has been moved.</p>
+    <a href="/">Return Home</a>
+</body>
+</html>
