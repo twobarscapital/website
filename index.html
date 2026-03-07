@@ -209,11 +209,15 @@
 
         .geo-map {
             margin-top: 2rem;
+            position: relative;
+            display: inline-block;
         }
 
         .geo-map img {
             max-width: 33%;
             height: auto;
+            mask-image: radial-gradient(ellipse 70% 70% at center, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 70% at center, black 40%, transparent 100%);
         }
 
         /* Footer */
