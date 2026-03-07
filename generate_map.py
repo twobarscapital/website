@@ -136,7 +136,7 @@ ax.text(19.5, -11.2, 'LOBITO CORRIDOR', fontsize=9, fontweight='bold',
 
 # Bounds
 ax.set_xlim(bounds[0] - 2, bounds[2] + 2)
-ax.set_ylim(bounds[3] + 1, bounds[1] - 1)
+ax.set_ylim(bounds[1] - 1, bounds[3] + 1)
 ax.axis('off')
 plt.tight_layout(pad=0)
 
