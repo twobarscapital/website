@@ -67,19 +67,19 @@ corridor_coords = [
     (28.68, -14.97),   # Kapiri Mposhi
 ]
 
+# (lon, lat, label, ha, x_offset, y_offset)
 cities = [
-    (13.55, -12.35, 'Lobito', 'right'),
-    (13.40, -12.58, 'Benguela', 'right'),
-    (15.73, -12.78, 'Huambo', 'left'),
-    (25.47, -10.72, 'Kolwezi', 'left'),
-    (26.40, -12.17, 'Solwezi', 'left'),
-    (28.68, -14.97, 'Kapiri Mposhi', 'left'),
+    (13.55, -12.35, 'Lobito', 'right', -12, -12),
+    (15.73, -12.78, 'Huambo', 'left', 8, -10),
+    (25.47, -10.72, 'Kolwezi', 'left', 8, -10),
+    (26.40, -12.17, 'Solwezi', 'right', -10, -10),
+    (28.68, -14.97, 'Kapiri Mposhi', 'left', 8, -8),
 ]
 
 country_labels = {
-    'Angola': (17.5, -12.5),
-    'Dem. Rep. Congo': (24.0, -5.5),
-    'Zambia': (27.5, -14.5),
+    'Angola': (17.0, -15.5),
+    'Dem. Rep. Congo': (24.0, -5.0),
+    'Zambia': (28.0, -13.2),
     'Namibia': (17.5, -21.5),
 }
 
@@ -115,9 +115,9 @@ gpd.GeoDataFrame(geometry=[corridor_line]).plot(
     path_effects=[pe.Stroke(linewidth=5, foreground=ACCENT), pe.Normal()])
 
 # City dots and labels
-for lon, lat, name, ha in cities:
+for lon, lat, name, ha, xoff, yoff in cities:
     ax.plot(lon, lat, 'o', color=TEXT_MUTED, markersize=5, zorder=5)
-    ax.annotate(name, (lon, lat), xytext=(8 if ha == 'left' else -8, 5),
+    ax.annotate(name, (lon, lat), xytext=(xoff, yoff),
                 textcoords='offset points', fontsize=7.5, color=TEXT_MUTED,
                 ha=ha, fontfamily='sans-serif')
 
@@ -130,8 +130,8 @@ ax.text(11.0, -16.0, 'ATLANTIC\nOCEAN', fontsize=8, color=ACCENT_LIGHT,
         ha='center', va='center', fontstyle='italic', alpha=0.6, fontfamily='sans-serif')
 
 # Corridor label
-ax.text(19.5, -11.2, 'LOBITO CORRIDOR', fontsize=9, fontweight='bold',
-        color=ACCENT_LIGHT, ha='center', va='center', rotation=-5,
+ax.text(19.0, -10.0, 'LOBITO CORRIDOR', fontsize=9, fontweight='bold',
+        color=ACCENT_LIGHT, ha='center', va='center', rotation=0,
         fontfamily='sans-serif', alpha=0.9)
 
 # Bounds
