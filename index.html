@@ -187,39 +187,14 @@
             margin: 0 auto 2rem;
         }
 
-        .geo-countries {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .geo-country {
-            background: rgba(26, 10, 8, 0.5);
-            border: 1px solid rgba(139, 26, 16, 0.2);
-            padding: 1.25rem 2rem;
-            min-width: 160px;
-            transition: all 0.3s ease;
-        }
-
-        .geo-country:hover {
-            border-color: rgba(139, 26, 16, 0.5);
-            transform: translateY(-3px);
-        }
-
-        .geo-country span {
-            display: block;
-            font-weight: 500;
-            font-size: 1.05rem;
-            color: var(--text);
-        }
-
-        .geo-corridor {
+        .geo-map {
             margin-top: 2rem;
-            color: var(--accent);
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 1px;
+        }
+
+        .geo-map img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid rgba(139, 26, 16, 0.2);
         }
 
         /* Footer */
@@ -313,21 +288,9 @@
         <div class="geo-coverage">
             <h3>Geographic Coverage</h3>
             <p>Strategic presence across Southern and Central Africa, with a focus on the Lobito Corridor — a key trade and infrastructure route connecting the Atlantic coast to the continent's interior.</p>
-            <div class="geo-countries">
-                <div class="geo-country">
-                    <span>Angola</span>
-                </div>
-                <div class="geo-country">
-                    <span>DRC</span>
-                </div>
-                <div class="geo-country">
-                    <span>Zambia</span>
-                </div>
-                <div class="geo-country">
-                    <span>Namibia</span>
-                </div>
+            <div class="geo-map">
+                <img src="lobito-corridor.png" alt="Map showing geographic coverage across Angola, DRC, Zambia, and Namibia with the Lobito Corridor route highlighted">
             </div>
-            <p class="geo-corridor">Lobito Corridor Focus</p>
         </div>
     </section>
 
