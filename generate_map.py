@@ -70,7 +70,7 @@ corridor_coords = [
 # (lon, lat, label, ha, x_offset, y_offset)
 cities = [
     (13.55, -12.35, 'Lobito', 'right', -12, -12),
-    (15.73, -12.78, 'Huambo', 'left', 8, -10),
+    (15.73, -12.78, 'Huambo', 'left', 10, 0),
     (25.47, -10.72, 'Kolwezi', 'left', 8, -10),
     (26.40, -12.17, 'Solwezi', 'right', -10, -10),
     (28.68, -14.97, 'Kapiri Mposhi', 'left', 8, -8),
@@ -130,7 +130,7 @@ ax.text(11.0, -16.0, 'ATLANTIC\nOCEAN', fontsize=8, color=ACCENT_LIGHT,
         ha='center', va='center', fontstyle='italic', alpha=0.6, fontfamily='sans-serif')
 
 # Corridor label
-ax.text(19.0, -10.0, 'LOBITO CORRIDOR', fontsize=9, fontweight='bold',
+ax.text(18.0, -10.0, 'LOBITO CORRIDOR', fontsize=9, fontweight='bold',
         color=ACCENT_LIGHT, ha='center', va='center', rotation=0,
         fontfamily='sans-serif', alpha=0.9)
 
